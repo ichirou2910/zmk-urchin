@@ -18,27 +18,9 @@
 #define CONFIG 5
 // -----------------
 
-&sk {
-	// don't release mods on other mods presses
-	ignore-modifiers;
-};
-
-
 / {
 	behaviors {
-		// Enables holding the first mod-tap key
-		// by performing a tap-release-hold sequence.
-		// To use it: "&qt KEYCODE1 KEYCODE2"
-		qt: quick_tap {
-			compatible = "zmk,behavior-hold-tap";
-			label = "QUICK_TAP";
-			#binding-cells = <2>;
-			flavor = "hold-preferred";
-			tapping-term-ms = <200>;
-			quick-tap-ms = <200>;
-			bindings = <&kp>, <&kp>;
-		};
-		// Homerow Mod
+		// Home Row Mod
 		hm: homerow_mods {
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
@@ -51,7 +33,7 @@
 
 	combos {
 		compatible = "zmk,combos";
-		// Q+W
+		// Z+X
 		combo_escape {
 			timeout-ms = <50>;
 			key-positions = <20 21>;
