@@ -75,10 +75,10 @@
 		nav_layer {
 			label = "Nav";
 			bindings = <
-			&none     &none     &none     &none       &none			&none       &kp HOME  &kp UP    &kp END   &none
-			&kp LGUI  &kp LALT  &kp LCTRL &kp LSHIFT  &none 		&none       &kp LEFT  &kp DOWN  &kp RIGHT &none
-			&kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V)   &none         &caps_word  &kp PG_DN &kp PG_UP &trans    &trans
-										  &none       &none    		&kp ENTER   &kp DEL 
+			&none     &none     &none     &none      &none		   &none      &kp HOME  &kp UP    &kp END   &none
+			&kp LGUI  &kp LALT  &kp LCTRL &kp LSHIFT &none 		   &caps_word &kp LEFT  &kp DOWN  &kp RIGHT &none
+			&kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V)  &none         &none      &kp PG_DN &kp PG_UP &trans    &trans
+										  &none      &none    	   &kp ENTER  &kp DEL 
 			>;
 		};
 
@@ -108,9 +108,9 @@
 		num_layer {
 			label = "Num";
 			bindings = <
-			&kp LBRC  &kp N7 &kp N8 &kp N9 &kp PRINTSCREEN      &none 	   &none 	 &none    &none     &none
-			&kp SQT   &kp N4 &kp N5 &kp N6 &none     			&kp LSHIFT &kp LCTRL &kp LALT &kp LGUI  &none
-			&kp GRAVE &kp N1 &kp N2 &kp N3 &none     			&none 	   &none 	 &none    &none     &none
+			&kp LBKT  &kp N7 &kp N8 &kp N9 &kp RBKT             &none 	   &none 	 &none    &none     &none
+			&kp SQT   &kp N4 &kp N5 &kp N6 &kp EQUAL   			&kp LSHIFT &kp LCTRL &kp LALT &kp LGUI  &none
+			&kp GRAVE &kp N1 &kp N2 &kp N3 &kp BSLH     		&none 	   &none 	 &none    &none     &none
 							        &kp N0 &kp MINUS            &none      &none  
 			>;
 		};
