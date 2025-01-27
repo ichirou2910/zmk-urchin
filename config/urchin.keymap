@@ -13,8 +13,8 @@
 // Layer definitions
 #define BASE 0
 #define NAV 1
-#define MEDIA 2
-#define FUNC 3
+#define FUNC 2
+#define MEDIA 3
 #define NUM 4
 #define CONFIG 5
 #define MOUSE 6
@@ -30,17 +30,6 @@
 			quick-tap-ms = <0>;
 			flavor = "tap-preferred";
 			bindings = <&kp>, <&kp>;
-		};
-	};
-
-	macros {
-		// sometimes my device thinks a modifier is being held down
-		// pressing all modifiers fixes it.
-		unstick: unstick {
-			label = "ZM_unstick";
-			compatible = "zmk,behavior-macro";
-			#binding-cells = <0>;
-			bindings = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
 		};
 	};
 
@@ -90,7 +79,18 @@
 			>;
 		};
 
-		// Navigation
+		// Function keys with modifiers
+		func_layer {
+			label = "Func";
+			bindings = <
+			&kp F12 &kp F7 &kp F8 &kp F9 &kp PSCRN         &none &none      &none     &none    &none
+			&kp F11 &kp F4 &kp F5 &kp F6 &none             &none &kp LSHIFT &kp LCTRL &kp LALT &kp LGUI
+			&kp F10 &kp F1 &kp F2 &kp F3 &none     		   &none &none      &none     &none    &none
+							      &none  &none             &none &none  
+			>;
+		};
+
+		// Media controls
 		media_layer {
 			label = "Media";
 			bindings = <
@@ -101,25 +101,14 @@
 			>;
 		};
 
-		// Function keys with modifiers
-		func_layer {
-			label = "Func";
-			bindings = <
-			&kp F12 &kp F7 &kp F8 &kp F9 &kp PSCRN         &none      &none     &none    &none     &none
-			&kp F11 &kp F4 &kp F5 &kp F6 &none             &kp LSHIFT &kp LCTRL &kp LALT &kp LGUI  &none
-			&kp F10 &kp F1 &kp F2 &kp F3 &none     		   &none      &none     &none    &none     &none
-							      &none  &none             &none      &none  
-			>;
-		};
-
 		// Numbers and symbols
 		num_layer {
 			label = "Num";
 			bindings = <
-			&kp LBKT  &kp N7 &kp N8 &kp N9 &kp RBKT             &none 	   &none 	 &none    &none     &none
-			&kp SQT   &kp N4 &kp N5 &kp N6 &kp EQUAL   			&kp LSHIFT &kp LCTRL &kp LALT &kp LGUI  &none
-			&kp GRAVE &kp N1 &kp N2 &kp N3 &kp BSLH     		&none 	   &none 	 &none    &none     &none
-							        &kp N0 &kp MINUS            &none      &none  
+			&kp LBKT  &kp N7 &kp N8 &kp N9 &kp RBKT             &none &none      &none     &none    &none
+			&kp SQT   &kp N4 &kp N5 &kp N6 &kp EQUAL   			&none &kp LSHIFT &kp LCTRL &kp LALT &kp LGUI
+			&kp GRAVE &kp N1 &kp N2 &kp N3 &kp BSLH     		&none &none      &none     &none    &none
+							        &kp N0 &kp MINUS            &none &none  
 			>;
 		};
 
@@ -127,7 +116,7 @@
 		config_layer {
 			label = "Conf";
 			bindings = <
-			&bootloader &none &none &bt BT_CLR &bt BT_SEL 0         &bt BT_SEL 3 &none &unstick &none &bootloader 
+			&bootloader &none &none &bt BT_CLR &bt BT_SEL 0         &bt BT_SEL 3 &none &none &none &bootloader 
 			&none       &none &none &none      &bt BT_SEL 1   	    &bt BT_SEL 4 &none &none &none &none
 			&none       &none &none &none      &bt BT_SEL 2         &bt BT_SEL 5 &none &none &none &none
 									&none      &none                &none        &none 
