@@ -14,10 +14,10 @@
 #define BASE 0
 #define NAV 1
 #define FUNC 2
-#define MEDIA 3
+#define MOUSE 3
 #define NUM 4
 #define CONFIG 5
-#define MOUSE 6
+#define MEDIA 6
 // -----------------
 
 / {
@@ -48,7 +48,7 @@
 			bindings = <&mo CONFIG>;
 		};
 		// both left thumb keys
-		combo_settings {
+		combo_media {
 			timeout-ms = <200>;
 			key-positions = <32 33>;
 			bindings = <&mo MEDIA>;
@@ -90,14 +90,14 @@
 			>;
 		};
 
-		// Media controls
-		media_layer {
-			label = "Media";
+		// Mouse movements
+		mouse_layer {
+			label = "Mouse";
 			bindings = <
-			&none     &none     &none     &none       &none			&none     &kp C_PP   &kp C_VOLUME_UP   &kp C_MUTE &none
-			&kp LGUI  &kp LALT  &kp LCTRL &kp LSHIFT  &none 		&none     &kp C_PREV &kp C_VOLUME_DOWN &kp C_NEXT &none
-			&none     &none     &none     &none       &none			&none     &none      &none             &none      &none
-										  &none       &none    		&none     &none
+			&none     &none     &none     &none      &none		   &none &mkp MB1       &mmv MOVE_UP    &mkp MB2        &none
+			&kp LGUI  &kp LALT  &kp LCTRL &kp LSHIFT &none 		   &none &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT &none
+			&none     &none     &none     &none      &none		   &none &mkp MB4       &mkp MB3        &mkp MB5        &none
+										  &none      &none    	   &none &none
 			>;
 		};
 
@@ -123,14 +123,14 @@
 			>;
 		};
 
-		// Mouse movements
-		mouse_layer {
-			label = "Mouse";
+		// Media controls
+		media_layer {
+			label = "Media";
 			bindings = <
-			&none     &none     &none     &none      &none		   &none &mkp MB1       &mmv MOVE_UP    &mkp MB2        &none
-			&kp LGUI  &kp LALT  &kp LCTRL &kp LSHIFT &none 		   &none &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT &none
-			&none     &none     &none     &none      &none		   &none &mkp MB4       &mkp MB3        &mkp MB5        &none
-										  &none      &none    	   &none &none
+			&none     &none     &none     &none       &none			&none     &kp C_PP   &kp C_VOLUME_UP   &kp C_MUTE &none
+			&kp LGUI  &kp LALT  &kp LCTRL &kp LSHIFT  &none 		&none     &kp C_PREV &kp C_VOLUME_DOWN &kp C_NEXT &none
+			&none     &none     &none     &none       &none			&none     &none      &none             &none      &none
+										  &none       &none    		&none     &none
 			>;
 		};
 	};
