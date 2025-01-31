@@ -72,7 +72,7 @@
 		shift_repeat: shift_repeat {
 			compatible = "zmk,behavior-adaptive-key";
 			#binding-cells = <0>;
-			shift_repeat, bindings = <&sk LSHFT>;
+			bindings = <&sk LSHFT>;
 			repeat {
 			    trigger-keys = <A B C D E F G H I J K L M N O P Q R S T U V W X Y Z>;
 			    bindings = <&key_repeat>;
