@@ -17,5 +17,7 @@ manifest:
     - name: urchin-zmk-module
       remote: duckyb
       revision: main
+    - name: zmk-adaptive-key
+      remote: urob
   self:
     path: config
