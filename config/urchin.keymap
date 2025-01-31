@@ -24,12 +24,16 @@
 #define KEYS_R 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29
 #define THUMBS 30 31 32 33
 
-#define MAGIC_SHIFT &magic_shift LSHFT 0
-
 &sk {
 	release-after-ms = <900>;
 	quick-release;
 };
+
+&caps_word {
+  /delete-property/ ignore-modifiers;
+};
+
+#define MAGIC_SHIFT &magic_shift LSHFT 0
 
 / {
 	behaviors {
