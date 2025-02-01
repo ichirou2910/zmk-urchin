@@ -22,6 +22,17 @@
 
 #define QUICK_TAP_MS 175
 
+&sk {
+  release-after-ms = <900>;
+  quick-release;
+};
+
+&lt {
+  flavor = "balanced";
+  tapping-term-ms = <200>;
+  quick-tap-ms = <QUICK_TAP_MS>;
+};
+
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
 	ZMK_HOLD_TAP(NAME, \
 		bindings = <HOLD>, <TAP>; \
