@@ -48,6 +48,17 @@
 MAKE_HRM(hml, &kp, &kp)
 MAKE_HRM(hmr, &kp, &kp)
 
+#define LAYER_SHIFT &mshift 3 LSHFT
+ZMK_TAP_DANCE(tdlt, \
+	tapping-term-ms = <200>; \
+	bindings = <&mshift> <&caps_word>; \
+)
+ZMK_HOLD_TAP(mshift, \
+	bindings = <&mo>, <&sk>; \
+	flavor = "hold-preferred"; \
+	tapping-term-ms = <200>; \
+)
+
 / {
 	combos {
 		compatible = "zmk,combos";
@@ -80,7 +91,7 @@ MAKE_HRM(hmr, &kp, &kp)
 			&kp Q       &kp W       &kp E        &kp R        &kp T          &kp Y       &kp U        &kp I        &kp O       &kp P 
 			&hml LGUI A &hml LALT S &hml LCTRL D &hml LSHFT F &kp G          &kp H       &hmr RSHFT J &hmr LCTRL K &hmr LALT L &hmr LGUI SEMI
 			&kp Z       &kp X       &kp C        &kp V        &kp B          &kp N       &kp M        &kp COMMA    &kp DOT     &kp FSLH
-							                  	 &lt 1 TAB    &lt 6 SPACE    &lt 2 ENTER &mo 3 
+							                  	 &lt 1 TAB    &lt 6 SPACE    &lt 2 ENTER LAYER_SHIFT
 			>;
 		};
 
