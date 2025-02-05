@@ -51,10 +51,10 @@
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)
 
-#define LAYER_SHIFT &mshift 3 LSHFT
+#define LAYER_SHIFT &tdlt 0 0
 ZMK_TAP_DANCE(tdlt, \
 	tapping-term-ms = <200>; \
-	bindings = <&mshift> <&caps_word>; \
+	bindings = <&mshift 3 LSHFT> <&caps_word>; \
 )
 ZMK_HOLD_TAP(mshift, \
 	bindings = <&mo>, <&sk>; \
