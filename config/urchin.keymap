@@ -54,7 +54,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)
 		compatible = "zmk,combos";
 		// Z+X
 		combo_escape {
-			timeout-ms = <50>;
+			timeout-ms = <100>;
 			key-positions = <20 21>;
 			bindings = <&kp ESC>;
 		};
