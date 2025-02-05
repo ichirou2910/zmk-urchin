@@ -29,24 +29,27 @@
 #define QUICK_TAP_MS 175
 
 &sk {
-  release-after-ms = <900>;
-  quick-release;
+	release-after-ms = <900>;
+	quick-release;
 };
 
 &lt {
-  tapping-term-ms = <200>;
+	flavor = "balanced";
+	tapping-term-ms = <200>;
+	quick-tap-ms = <QUICK_TAP_MS>;
 };
 
-#define MAKE_HRM(NAME, HOLD, TAP) \
+#define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
 	ZMK_HOLD_TAP(NAME, \
 		bindings = <HOLD>, <TAP>; \
 		flavor = "hold-preferred"; \
 		quick-tap-ms = <QUICK_TAP_MS>; \
 		tapping-term-ms = <200>; \
 		hold-trigger-on-release; \
+		hold-trigger-key-positions = <TRIGGER_POS>; \
 	)
-MAKE_HRM(hml, &kp, &kp)
-MAKE_HRM(hmr, &kp, &kp)
+MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)
+MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)
 
 #define LAYER_SHIFT &mshift 3 LSHFT
 ZMK_TAP_DANCE(tdlt, \
