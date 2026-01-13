@@ -30,7 +30,7 @@
 &sk {
 	release-after-ms = <900>;
 	quick-release;
-	/delete-property/ ignore-modifiers;
+	/* /delete-property/ ignore-modifiers; */
 };
 
 &lt {
@@ -42,20 +42,21 @@
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
 	ZMK_HOLD_TAP(NAME, \
 		bindings = <HOLD>, <TAP>; \
-		flavor = "hold-preferred"; \
+		flavor = "balanced"; \
 		quick-tap-ms = <QUICK_TAP_MS>; \
-		tapping-term-ms = <200>; \
+		tapping-term-ms = <280>; \
+        require-prior-idle-ms = <150>; \
 		hold-trigger-on-release; \
 		hold-trigger-key-positions = <TRIGGER_POS>; \
 	)
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)
 
-/* #define LAYER_SHIFT &tdlt 0 0 */
-/* ZMK_TAP_DANCE(tdlt, \ */
-/* 	bindings = <&msk 3 LSHFT>, <&caps_word>; \ */
-/* 	tapping-term-ms = <200>; \ */
-/* ) */
+#define LAYER_SHIFT &tdlt 0 0
+ZMK_TAP_DANCE(tdlt, \
+	bindings = <&msk 3 LSHFT>, <&caps_word>; \
+	tapping-term-ms = <200>; \
+)
 ZMK_HOLD_TAP(msk, \
 	bindings = <&mo>, <&sk>; \
 	flavor = "hold-preferred"; \
